@@ -1,0 +1,13 @@
+注解（Annotation）的作用：
+1，不是程序本身，可以对程序作出解释。
+2，可以被其他程序（编译器）读取。（注解信息处理流程，是注解和注释的重大区别，如果没有注解信息处理流程，则注解毫无意义。）
+3，可以附加在package，class，method，field等上面，相当于给他们添加了额外的辅助信息，可以通过反射机制编程实现对这些元数据的访问。
+内置注解：
+@Override:只能用于修饰方法，标记该方法为重写父类的方法，若该方法在父类中不存在则会报错。
+@Deprecated:用于修饰方法，属性，类。标记该方法不推荐程序员使用
+@SuppressWarnings:用于抑制编译时的警告信息使用时需要添加参数，表示抑制哪一种编译时的警告信息。eg:@SuppressWarnings("uncheck")
+自定义注解：需要指定元注解
+元注解：注解其他注解，java定义了4个标准的meta-annotation类型，用来提供对其他annotation类型
+做说明。@Target（描述注解的使用范围），@Retention（描述注解的生命周期（SOURCE,CLASS,RUNTIME：运行是有效）),@Documented,@Inherited位于java.lang.Annotation包下。
+类和表结构对应，属性和字段对应，对象和记录对应。
+利用反射来定义注解处理流程读取这些注解，实现更复杂的功能。
